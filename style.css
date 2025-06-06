@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
+.logo-img {
+  height: 50px; /* Ajuste conforme necessário */
+  width: auto;
+  transition: transform 0.3s;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .logo-img {
+    height: 40px;
+  }
+}
 /* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
 * {
   margin: 0;
