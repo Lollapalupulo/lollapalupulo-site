@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .logo-img {
-  height: 50px; /* Ajuste conforme necessário */
+  height: 100px; /* Ajuste conforme necessário */
   width: auto;
   transition: transform 0.3s;
 }
