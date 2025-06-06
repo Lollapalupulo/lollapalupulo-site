@@ -100,7 +100,11 @@ nav a:hover {
   filter: drop-shadow(0 0 10px rgba(255, 214, 0, 0.5));
   animation: pulse 2s infinite alternate;
 }
-
+.hero-logo:hover {
+  animation: none;
+  transform: scale(1.1) rotate(-5deg);
+  transition: all 0.3s;
+}
 @keyframes pulse {
   from { transform: scale(1); }
   to { transform: scale(1.05); }
