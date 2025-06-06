@@ -11,13 +11,13 @@
 <body>
   <!-- Header -->
   <header>
-    <div class="logo">MENU</div>
+    <div class="logo">LOLLAPALUPULO</div>
     <button class="mobile-menu-btn">☰</button>
     <nav>
       <a href="#">HOME</a>
-      <a href="#">PROGRAMAÇÃO</a>
-      <a href="#">EXPERIÊNCIA</a>
-      <a href="#" class="btn-ingresso">INGRESSOS</a>
+      <a href="#programacao">PROGRAMAÇÃO</a>
+      <a href="#experiencia">EXPERIÊNCIA</a>
+      <a href="#ingressos" class="btn-ingresso">INGRESSOS</a>
     </nav>
   </header>
 
@@ -28,14 +28,14 @@
       <h1>15 DE NOVEMBRO DE 2025</h1>
       <p>O festival que une rock, lúpulo e histórias épicas!</p>
       <div class="buttons">
-        <a href="#" class="btn-primary pulse">GARANTA SEU INGRESSO</a>
-        <a href="#" class="btn-secondary">VEJA A PROGRAMAÇÃO</a>
+        <a href="#ingressos" class="btn-primary pulse">GARANTA SEU INGRESSO</a>
+        <a href="#programacao" class="btn-secondary">VEJA A PROGRAMAÇÃO</a>
       </div>
     </div>
   </section>
 
   <!-- Galeria -->
-  <section class="galeria">
+  <section class="galeria" id="experiencia">
     <h2>EDIÇÃO 2024 EM FOTOS</h2>
     <div class="carrossel">
       <div class="slide"><img src="imagens/foto1.jpg" alt="Show 2024"></div>
@@ -49,7 +49,7 @@
   </section>
 
   <!-- Programação -->
-  <section class="programacao">
+  <section class="programacao" id="programacao">
     <h2>PROGRAMAÇÃO</h2>
     <div class="dia-tabs">
       <button class="ativo" data-dia="dia1">DIA 1</button>
@@ -62,6 +62,7 @@
         <p>22:00 • PALCO LÚPULO</p>
         <button class="favorito">❤️</button>
       </div>
+      <!-- Adicione mais atrações aqui -->
     </div>
     
     <div id="dia2" class="dia-conteudo">
@@ -70,6 +71,7 @@
         <p>20:00 • PALCO ROCK</p>
         <button class="favorito">❤️</button>
       </div>
+      <!-- Adicione mais atrações aqui -->
     </div>
   </section>
 
@@ -91,9 +93,32 @@
     </div>
   </section>
 
+  <!-- Ingressos -->
+  <section class="ingressos" id="ingressos">
+    <h2>INGRESSOS</h2>
+    <div class="ingressos-container">
+      <div class="ingresso-card">
+        <h3>PISTA</h3>
+        <p class="preco">R$ 250,00</p>
+        <ul>
+          <li>Acesso a todos os palcos</li>
+          <li>Área comum</li>
+        </ul>
+        <button class="btn-comprar">COMPRAR</button>
+      </div>
+      <!-- Adicione mais opções de ingresso -->
+    </div>
+  </section>
+
   <!-- Rodapé -->
   <footer>
-    <p>© LOLLAPALUPULO 2025 | Rock, Lúpulo e Diversão!</p>
+    <div class="footer-content">
+      <div class="redes-sociais">
+        <a href="#"><img src="imagens/instagram-icon.svg" alt="Instagram"></a>
+        <a href="#"><img src="imagens/facebook-icon.svg" alt="Facebook"></a>
+      </div>
+      <p>© LOLLAPALUPULO 2025 | Rock, Lúpulo e Diversão!</p>
+    </div>
   </footer>
 
   <!-- Scripts -->
