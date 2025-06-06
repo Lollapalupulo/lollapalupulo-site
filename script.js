@@ -1,23 +1,26 @@
-// ===== MENU MOBILE =====
+// Menu Mobile
 const menuBtn = document.querySelector('.mobile-menu-btn');
 const navMenu = document.querySelector('nav');
 
 menuBtn.addEventListener('click', () => {
-  // Alterna a classe 'ativo' no menu
-  navMenu.classList.toggle('ativo');
-  
-  // Altera o ícone para 'X' quando aberto
-  if (navMenu.classList.contains('ativo')) {
-    menuBtn.innerHTML = '✕';
-  } else {
-    menuBtn.innerHTML = '☰';
-  }
+  navMenu.classList.toggle('active');
+  menuBtn.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
 });
 
-// Fecha o menu ao clicar em um link
+// Fecha menu ao clicar em links
 document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', () => {
-    navMenu.classList.remove('ativo');
+    navMenu.classList.remove('active');
     menuBtn.innerHTML = '☰';
+  });
+});
+
+// Efeito de scroll suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
