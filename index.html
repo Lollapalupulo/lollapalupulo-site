@@ -3,14 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lollapalupulo 2025 | Festival de Rock e Cerveja Artesanal</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Lollapalupulo 2025</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    /* Header Mobile */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: relative;
+    }
+    
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: #FFD600;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+    }
+    
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+    
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    /* Hero Section Mobile */
+    .hero {
+      height: auto;
+      padding: 80px 5%;
+      text-align: center;
+    }
+    
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 30px;
+    }
+    
+    /* Media Queries */
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #121212;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
     <div class="logo">LOLLAPALUPULO</div>
+    <button class="mobile-menu-btn">☰</button>
     <nav>
       <a href="#">HOME</a>
       <a href="#">PROGRAMAÇÃO</a>
@@ -19,7 +95,6 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>15 DE NOVEMBRO DE 2025</h1>
     <p>O festival que une rock, lúpulo e histórias épicas!</p>
@@ -29,18 +104,12 @@
     </div>
   </section>
 
-  <!-- Programação -->
-  <section class="programacao">
-    <h2>PROGRAMAÇÃO</h2>
-    <div class="banda-card">
-      <h3>NOME DA BANDA</h3>
-      <p>22:00 • PALCO LÚPULO</p>
-    </div>
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>© LOLLAPALUPULO 2025 | Rock, Lúpulo e Diversão!</p>
-  </footer>
+  <script>
+    // Menu Mobile Toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      const nav = document.querySelector('nav');
+      nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+    });
+  </script>
 </body>
 </html>
