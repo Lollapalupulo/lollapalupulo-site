@@ -94,7 +94,7 @@ nav a:hover {
 
 /* ===== HERO SECTION ===== */
 .hero-logo {
-  width: 300px; /* Ajuste conforme necessário */
+  width: 400px; /* Ajuste conforme necessário */
   max-width: 80%;
   margin-bottom: 20px;
   filter: drop-shadow(0 0 10px rgba(255, 214, 0, 0.5));
