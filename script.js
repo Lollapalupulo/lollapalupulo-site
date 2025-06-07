@@ -1,35 +1,27 @@
 // Alternar tema claro/escuro
-const toggleButton = document.getElementById('toggle-theme');
-const htmlElement = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-function setTheme(theme) {
-  if (theme === 'dark') {
-    htmlElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    toggleButton.textContent = '☀️ Claro';
-  } else {
-    htmlElement.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'light');
-    toggleButton.textContent = '🌙 Escuro';
-  }
+// Verifica tema salvo
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-theme');
 }
 
-// Tema ao carregar
-document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  setTheme(savedTheme);
+themeToggle.addEventListener('click', () => {
+  body.classList.toggle('dark-theme');
+
+  // Salva preferência do usuário
+  if (body.classList.contains('dark-theme')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
 });
 
-// Botão de troca de tema
-toggleButton.addEventListener('click', () => {
-  const current = htmlElement.getAttribute('data-theme');
-  setTheme(current === 'dark' ? 'light' : 'dark');
-});
+// Menu hambúrguer responsivo
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
 
-// Menu hambúrguer
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('show');
 });
