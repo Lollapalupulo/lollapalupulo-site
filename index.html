@@ -1,76 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-theme="dark">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lollapalúpulo - Rock & Cerveja Artesanal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lollapalúpulo - Rock & Cerveja</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="imagens/favicon.png" type="image/png" />
+  <link rel="icon" type="image/png" href="imagens/favicon.png" />
 </head>
 <body>
-  <header class="header">
-    <img src="imagens/logo.png" alt="Logotipo Lollapalúpulo" class="logo" />
-    <nav>
-      <ul class="nav">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#lineup">Line-up</a></li>
-        <li><a href="#cervejas">Cervejas</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-    <button id="toggle-theme" aria-label="Alternar tema">🌓</button>
+  <header>
+    <div class="container">
+      <img src="imagens/logotipo.png" alt="Logotipo Lollapalúpulo" class="logo" />
+      <button id="toggle-theme">🌙 Escuro</button>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <nav id="nav-menu">
+        <a href="#inicio">Início</a>
+        <a href="#artistas">Artistas</a>
+        <a href="#cervejas">Cervejas</a>
+        <a href="#ingressos">Ingressos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>Lollapalúpulo</h1>
-      <p>O festival definitivo de rock e cerveja artesanal</p>
-      <a href="#lineup" class="btn">Ver atrações</a>
+    <section id="inicio" class="hero">
+      <h1>Bem-vindo ao Lollapalúpulo</h1>
+      <p>O maior festival de rock e cerveja artesanal do Brasil!</p>
     </section>
 
-    <section id="sobre" class="section">
-      <h2>Sobre o Evento</h2>
-      <p>
-        O Lollapalúpulo une a energia do rock com o sabor das melhores cervejas artesanais do Brasil.
-        Um encontro épico de música, cultura e lúpulo para todos os apaixonados por boas experiências.
-      </p>
+    <section id="artistas">
+      <h2>Line-up Explosivo</h2>
+      <p>Bandas que vão fazer o chão tremer!</p>
     </section>
 
-    <section id="lineup" class="section">
-      <h2>Line-up 2025</h2>
-      <ul class="lineup">
-        <li>🔥 Os Mutantes</li>
-        <li>🎸 CPM 22</li>
-        <li>🎤 Pitty</li>
-        <li>🤘 Raimundos</li>
-        <li>🎶 Scalene</li>
-        <li>🥁 Supercombo</li>
-      </ul>
+    <section id="cervejas">
+      <h2>Cervejas Artesanais</h2>
+      <p>Mais de 100 rótulos de cervejarias independentes.</p>
     </section>
 
-    <section id="cervejas" class="section">
-      <h2>Cervejarias Confirmadas</h2>
-      <ul class="cervejas">
-        <li>🍺 Colorado</li>
-        <li>🍺 Wäls</li>
-        <li>🍺 Dogma</li>
-        <li>🍺 Trilha</li>
-        <li>🍺 Everbrew</li>
-      </ul>
+    <section id="ingressos">
+      <h2>Garanta seu Ingresso</h2>
+      <p>Não fique de fora do festival mais saboroso do ano.</p>
     </section>
 
-    <section id="contato" class="section contato">
+    <section id="contato">
       <h2>Fale Conosco</h2>
-      <form action="#" method="POST">
-        <input type="text" name="nome" placeholder="Seu nome" required />
-        <input type="email" name="email" placeholder="Seu e-mail" required />
-        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
-        <button type="submit" class="btn">Enviar</button>
-      </form>
+      <p>Dúvidas? Mande uma mensagem!</p>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <p>&copy; 2025 Lollapalúpulo. Todos os direitos reservados.</p>
   </footer>
 
