@@ -28,3 +28,13 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Alternância do menu em telas pequenas
+const toggle = document.createElement('div');
+toggle.classList.add('menu-toggle');
+toggle.innerHTML = '&#9776;'; // ícone de hambúrguer
+document.querySelector('.nav').prepend(toggle);
+
+toggle.addEventListener('click', () => {
+  document.querySelector('.nav ul').classList.toggle('show');
+});
