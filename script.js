@@ -1,6 +1,10 @@
 // Efeitos simples de rolagem suave e realce de menu
 
 // Rolagem suave ao clicar nos links do menu
+document.addEventListener('DOMContentLoaded', () => {
+  const
+::contentReference[oaicite:154]{index=154}
+ 
 const menuLinks = document.querySelectorAll('.nav a');
 
 menuLinks.forEach(link => {
