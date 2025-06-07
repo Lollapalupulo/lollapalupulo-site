@@ -1,27 +1,30 @@
-// Alternar tema claro/escuro
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
+// Efeitos simples de rolagem suave e realce de menu
 
-// Verifica tema salvo
-if (localStorage.getItem('theme') === 'dark') {
-  body.classList.add('dark-theme');
-}
+// Rolagem suave ao clicar nos links do menu
+const menuLinks = document.querySelectorAll('.nav a');
 
-themeToggle.addEventListener('click', () => {
-  body.classList.toggle('dark-theme');
+menuLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').substring(1);
+    const section = document.getElementById(targetId);
 
-  // Salva preferência do usuário
-  if (body.classList.contains('dark-theme')) {
-    localStorage.setItem('theme', 'dark');
-  } else {
-    localStorage.setItem('theme', 'light');
-  }
+    window.scrollTo({
+      top: section.offsetTop - 80,
+      behavior: 'smooth'
+    });
+  });
 });
 
-// Menu hambúrguer responsivo
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav');
-
-menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('show');
+// Destaque do link do menu ao rolar
+window.addEventListener('scroll', () => {
+  const fromTop = window.scrollY + 90;
+  menuLinks.forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
 });
