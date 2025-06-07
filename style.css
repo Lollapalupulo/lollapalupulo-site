@@ -1,251 +1,133 @@
-/* RESET GERAL */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #111;
-  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* TEMA ESCURO */
-body.dark-theme {
+header.header {
   background-color: #111;
-  color: #f0f0f0;
-}
-
-.dark-theme header,
-.dark-theme nav,
-.dark-theme footer {
-  background-color: #1a1a1a;
-}
-
-.dark-theme .menu-toggle span {
-  background: #f0f0f0;
-}
-
-/* HEADER */
-header {
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background: #ff0066;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid #e60039;
 }
 
-.logo img {
-  height: 40px;
+.logo {
+  height: 60px;
 }
 
-nav {
+.nav ul {
   display: flex;
+  list-style: none;
   gap: 1.5rem;
 }
 
-nav a {
+.nav a {
   text-decoration: none;
   color: #fff;
-  font-weight: 600;
-  position: relative;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-nav a::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  left: 0;
-  bottom: -3px;
-  background: #fff;
-  transition: width 0.3s ease;
+.nav a:hover {
+  color: #e60039;
 }
 
-nav a:hover::after {
-  width: 100%;
-}
-
-/* MENU HAMBURGUER */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: #fff;
-  border-radius: 2px;
-}
-
-/* HERO */
 .hero {
-  height: 100vh;
-  background: url('./imagens/banner.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: url('site-lollapalupulo/imagens/festival-bg.jpg') no-repeat center center/cover;
   text-align: center;
-  padding: 2rem;
+  padding: 6rem 2rem;
   color: #fff;
-  position: relative;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
+  text-shadow: 2px 2px 8px #000;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 5px #000;
+  color: #ffe600;
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
 }
 
-/* SEÇÕES */
 section {
-  padding: 6rem 2rem 4rem;
-  max-width: 1200px;
+  padding: 4rem 2rem;
+  max-width: 1000px;
   margin: auto;
 }
 
 section h2 {
+  font-size: 2.5rem;
+  color: #e60039;
+  margin-bottom: 1rem;
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  color: #ff0066;
 }
 
-/* LINEUP */
-.lineup ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.detalhes p {
+  margin: 0.5rem 0;
+}
+
+.fotos .galeria {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  text-align: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.lineup li {
-  background: #f5f5f5;
-  padding: 1rem;
-  border-radius: 8px;
-  font-weight: bold;
+.fotos img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s;
 }
 
-.dark-theme .lineup li {
-  background: #222;
+.fotos img:hover {
+  transform: scale(1.05);
 }
 
-/* CERVEJAS */
-.cervejas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  text-align: center;
-}
-
-.cervejas div {
-  background: #fdfdfd;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.dark-theme .cervejas div {
-  background: #1f1f1f;
-}
-
-/* INGRESSOS */
-.ingressos {
-  text-align: center;
-}
-
-.btn {
+.botao-compra {
   display: inline-block;
+  background: #e60039;
+  color: #fff;
   padding: 1rem 2rem;
-  background: #ff0066;
-  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 1rem;
   text-decoration: none;
-  font-weight: bold;
-  border-radius: 50px;
+  border-radius: 8px;
   transition: background 0.3s;
 }
 
-.btn:hover {
-  background: #e6005c;
+.botao-compra:hover {
+  background: #ff0033;
 }
 
-/* FOOTER */
-footer {
-  background: #ff0066;
-  color: #fff;
+.aviso {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #ffaaaa;
   text-align: center;
-  padding: 2rem 1rem;
 }
 
-/* TEMA BUTTON */
-#theme-toggle {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: 2px solid #fff;
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 2000;
-  transition: background 0.3s;
-}
-
-#theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  nav {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #ff0066;
-    flex-direction: column;
-    width: 200px;
-    padding: 1rem;
-    display: none;
-  }
-
-  nav.show {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
+footer.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: #111;
+  border-top: 3px solid #e60039;
+  font-size: 0.9rem;
+  color: #888;
 }
