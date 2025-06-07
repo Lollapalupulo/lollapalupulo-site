@@ -1,69 +1,65 @@
-/* Reset e base */
+:root {
+  --bg-color: #fff;
+  --text-color: #111;
+  --primary-color: #e60039;
+}
+
+[data-theme="dark"] {
+  --bg-color: #111;
+  --text-color: #fff;
+  --primary-color: #ff0055;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
-/* Temas */
-:root {
-  --bg: #ffffff;
-  --text: #222;
-  --primary: #e60039;
-  --secondary: #333;
-  --card-bg: #f7f7f7;
-}
-
-[data-theme="dark"] {
-  --bg: #111;
-  --text: #eee;
-  --primary: #ff2d55;
-  --secondary: #444;
-  --card-bg: #1d1d1d;
-}
-
-/* Header */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--secondary);
-  padding: 1rem 2rem;
+header {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
 }
 
 .logo {
   height: 50px;
 }
 
-.nav {
-  list-style: none;
+nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
-.nav a {
+nav a {
+  color: #fff;
   text-decoration: none;
-  color: var(--text);
   font-weight: bold;
-  transition: color 0.3s;
+  transition: opacity 0.3s ease;
 }
 
-.nav a:hover {
-  color: var(--primary);
+nav a:hover {
+  opacity: 0.7;
 }
 
 #toggle-theme {
@@ -71,95 +67,74 @@ body {
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
-  color: var(--text);
+  color: #fff;
+  position: absolute;
+  right: 50px;
 }
 
-/* Hero */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
 .hero {
   background: url('imagens/festival-bg.jpg') center/cover no-repeat;
-  padding: 8rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
   color: #fff;
-  background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: var(--primary-color);
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.btn {
-  background: var(--primary);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #b8002d;
-}
-
-/* Seções */
-.section {
+section {
   padding: 4rem 2rem;
-  max-width: 900px;
+  max-width: 1000px;
   margin: auto;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+footer {
+  background: #222;
+  color: #bbb;
   text-align: center;
+  padding: 1rem;
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  color: var(--primary);
-}
+/* Responsivo */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-color);
+    flex-direction: column;
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+  }
 
-.lineup, .cervejas {
-  list-style: none;
-  padding: 0;
-  font-size: 1.2rem;
-}
+  nav a {
+    padding: 0.5rem 0;
+    font-size: 1.1rem;
+  }
 
-.lineup li,
-.cervejas li {
-  margin: 0.5rem 0;
-}
+  nav.active {
+    display: flex;
+  }
 
-/* Contato */
-.contato form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
+  .hamburger {
+    display: block;
+  }
 
-.contato input,
-.contato textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background: var(--card-bg);
-  color: var(--text);
-}
-
-.contato textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* Footer */
-.footer {
-  background: var(--secondary);
-  text-align: center;
-  padding: 2rem;
-  color: #aaa;
-  font-size: 0.9rem;
+  #toggle-theme {
+    right: 2rem;
+  }
 }
