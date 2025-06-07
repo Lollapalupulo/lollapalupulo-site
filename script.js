@@ -14,25 +14,22 @@ function setTheme(theme) {
   }
 }
 
-// Detectar tema salvo
+// Tema ao carregar
 document.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem('theme');
-  setTheme(savedTheme === 'dark' ? 'dark' : 'light');
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  setTheme(savedTheme);
 });
 
 // Botão de troca de tema
 toggleButton.addEventListener('click', () => {
-  const currentTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  const current = htmlElement.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
 });
 
-// Animação de rolagem suave nos links
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
+// Menu hambúrguer
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
 });
