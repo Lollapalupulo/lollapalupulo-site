@@ -1,26 +1,38 @@
-// Menu Mobile
-const menuBtn = document.querySelector('.mobile-menu-btn');
-const navMenu = document.querySelector('nav');
+// Alternar tema claro/escuro
+const toggleButton = document.getElementById('toggle-theme');
+const htmlElement = document.documentElement;
 
-menuBtn.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
-  menuBtn.innerHTML = navMenu.classList.contains('active') ? '✕' : '☰';
+function setTheme(theme) {
+  if (theme === 'dark') {
+    htmlElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    toggleButton.textContent = '☀️ Claro';
+  } else {
+    htmlElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    toggleButton.textContent = '🌙 Escuro';
+  }
+}
+
+// Detectar tema salvo
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  setTheme(savedTheme === 'dark' ? 'dark' : 'light');
 });
 
-// Fecha menu ao clicar em links
-document.querySelectorAll('nav a').forEach(link => {
-  link.addEventListener('click', () => {
-    navMenu.classList.remove('active');
-    menuBtn.innerHTML = '☰';
-  });
+// Botão de troca de tema
+toggleButton.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
 });
 
-// Efeito de scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+// Animação de rolagem suave nos links
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
   });
 });
