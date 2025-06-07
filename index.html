@@ -1,127 +1,79 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lollapalupulo 2025 | Festival de Rock e Cerveja Artesanal</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="imagens/favicon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lollapalúpulo - Rock & Cerveja Artesanal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="imagens/favicon.png" type="image/png" />
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">LOLLAPALUPULO</div>
-    <button class="mobile-menu-btn">☰</button>
+  <header class="header">
+    <img src="imagens/logotipo.png" alt="Logotipo Lollapalúpulo" class="logo" />
     <nav>
-      <a href="#">HOME</a>
-      <a href="#programacao">PROGRAMAÇÃO</a>
-      <a href="#experiencia">EXPERIÊNCIA</a>
-      <a href="#ingressos" class="btn-ingresso">INGRESSOS</a>
+      <ul class="nav">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#lineup">Line-up</a></li>
+        <li><a href="#cervejas">Cervejas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </nav>
+    <button id="toggle-theme" aria-label="Alternar tema">🌓</button>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="imagens/logo.png" alt="Lollapalupulo" class="hero-logo">
-    <div class="hero-content">
-      <h1>15 DE NOVEMBRO DE 2025</h1>
-      <p>O festival que une rock, lúpulo e histórias épicas!</p>
-      <div class="buttons">
-        <a href="#ingressos" class="btn-primary pulse">GARANTA SEU INGRESSO</a>
-        <a href="#programacao" class="btn-secondary">VEJA A PROGRAMAÇÃO</a>
-      </div>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Lollapalúpulo</h1>
+      <p>O festival definitivo de rock e cerveja artesanal</p>
+      <a href="#lineup" class="btn">Ver atrações</a>
+    </section>
 
-  <!-- Galeria -->
-  <section class="galeria" id="experiencia">
-    <h2>EDIÇÃO 2024 EM FOTOS</h2>
-    <div class="carrossel">
-      <div class="slide"><img src="imagens/foto1.jpg" alt="Show 2024"></div>
-      <div class="slide"><img src="imagens/foto2.jpg" alt="Público animado"></div>
-      <div class="slide"><img src="imagens/foto3.jpg" alt="Cervejas artesanais"></div>
-    </div>
-    <div class="carrossel-controle">
-      <button class="anterior">❮</button>
-      <button class="proximo">❯</button>
-    </div>
-  </section>
+    <section id="sobre" class="section">
+      <h2>Sobre o Evento</h2>
+      <p>
+        O Lollapalúpulo une a energia do rock com o sabor das melhores cervejas artesanais do Brasil.
+        Um encontro épico de música, cultura e lúpulo para todos os apaixonados por boas experiências.
+      </p>
+    </section>
 
-  <!-- Programação -->
-  <section class="programacao" id="programacao">
-    <h2>PROGRAMAÇÃO</h2>
-    <div class="dia-tabs">
-      <button class="ativo" data-dia="dia1">DIA 1</button>
-      <button data-dia="dia2">DIA 2</button>
-    </div>
-    
-    <div id="dia1" class="dia-conteudo ativo">
-      <div class="atracao">
-        <h3>BANDA HEADLINER</h3>
-        <p>22:00 • PALCO LÚPULO</p>
-        <button class="favorito">❤️</button>
-      </div>
-      <!-- Adicione mais atrações aqui -->
-    </div>
-    
-    <div id="dia2" class="dia-conteudo">
-      <div class="atracao">
-        <h3>BANDA 2</h3>
-        <p>20:00 • PALCO ROCK</p>
-        <button class="favorito">❤️</button>
-      </div>
-      <!-- Adicione mais atrações aqui -->
-    </div>
-  </section>
+    <section id="lineup" class="section">
+      <h2>Line-up 2025</h2>
+      <ul class="lineup">
+        <li>🔥 Os Mutantes</li>
+        <li>🎸 CPM 22</li>
+        <li>🎤 Pitty</li>
+        <li>🤘 Raimundos</li>
+        <li>🎶 Scalene</li>
+        <li>🥁 Supercombo</li>
+      </ul>
+    </section>
 
-  <!-- Mapa -->
-  <section class="mapa">
-    <h2>ONDE FICA A FESTA?</h2>
-    <div class="mapa-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.876816593987!2d-46.6543909246866!3d-23.541313478807914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMyJzI4LjciUyA0NsKwMzknMDkuOSJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" 
-              width="100%" 
-              height="300" 
-              style="border:0;" 
-              allowfullscreen="" 
-              loading="lazy">
-      </iframe>
-    </div>
-    <div class="info-local">
-      <p>📍 <strong>Estância Cristal</strong></p>
-      <p>Rodovia BR-000, Km 123 - São Paulo/SP</p>
-    </div>
-  </section>
+    <section id="cervejas" class="section">
+      <h2>Cervejarias Confirmadas</h2>
+      <ul class="cervejas">
+        <li>🍺 Colorado</li>
+        <li>🍺 Wäls</li>
+        <li>🍺 Dogma</li>
+        <li>🍺 Trilha</li>
+        <li>🍺 Everbrew</li>
+      </ul>
+    </section>
 
-  <!-- Ingressos -->
-  <section class="ingressos" id="ingressos">
-    <h2>INGRESSOS</h2>
-    <div class="ingressos-container">
-      <div class="ingresso-card">
-        <h3>PISTA</h3>
-        <p class="preco">R$ 250,00</p>
-        <ul>
-          <li>Acesso a todos os palcos</li>
-          <li>Área comum</li>
-        </ul>
-        <button class="btn-comprar">COMPRAR</button>
-      </div>
-      <!-- Adicione mais opções de ingresso -->
-    </div>
-  </section>
+    <section id="contato" class="section contato">
+      <h2>Fale Conosco</h2>
+      <form action="#" method="POST">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu e-mail" required />
+        <textarea name="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
 
-  <!-- Rodapé -->
-  <footer>
-    <div class="footer-content">
-      <div class="redes-sociais">
-        <a href="#"><img src="imagens/instagram-icon.svg" alt="Instagram"></a>
-        <a href="#"><img src="imagens/facebook-icon.svg" alt="Facebook"></a>
-      </div>
-      <p>© LOLLAPALUPULO 2025 | Rock, Lúpulo e Diversão!</p>
-    </div>
+  <footer class="footer">
+    <p>&copy; 2025 Lollapalúpulo. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
