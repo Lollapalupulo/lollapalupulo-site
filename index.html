@@ -1,59 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lollapalúpulo - Rock & Cerveja</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="imagens/favicon.png" />
-</head>
-<body>
-  <header>
-    <div class="container">
-      <img src="imagens/logo.png" alt="Logotipo Lollapalúpulo" class="logo" />
-      <button id="toggle-theme">🌙 Escuro</button>
-      <button class="hamburger" id="hamburger">&#9776;</button>
-      <nav id="nav-menu">
-        <a href="#inicio">Início</a>
-        <a href="#artistas">Artistas</a>
-        <a href="#cervejas">Cervejas</a>
-        <a href="#ingressos">Ingressos</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lollapalúpulo Festival</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="imagens/favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container">
+        <img src="imagens/logo.png" alt="Logotipo Lollapalúpulo" class="logo" />
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+        <nav class="nav">
+          <ul class="nav-list" id="nav-list">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#lineup">Line-Up</a></li>
+            <li><a href="#cervejas">Cervejas</a></li>
+            <li><a href="#ingressos">Ingressos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+          <button class="hamburger" id="hamburger">&#9776;</button>
+        </nav>
+      </div>
+    </header>
 
-  <main>
-    <section id="inicio" class="hero">
-      <h1>Bem-vindo ao Lollapalúpulo</h1>
-      <p>O maior festival de rock e cerveja artesanal do Brasil!</p>
-    </section>
+    <main>
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Lollapalúpulo 2025</h1>
+          <p>O maior encontro entre o rock e a cerveja artesanal no coração do Brasil</p>
+          <a href="#ingressos" class="btn">Compre seu Ingresso</a>
+        </div>
+      </section>
 
-    <section id="artistas">
-      <h2>Line-up Explosivo</h2>
-      <p>Bandas que vão fazer o chão tremer!</p>
-    </section>
+      <section id="lineup" class="section">
+        <h2>Line-Up</h2>
+        <p>As bandas mais quentes do rock alternativo, indie, punk e clássico!</p>
+        <div class="lineup-grid">
+          <div class="artist-card">Foo Fighters</div>
+          <div class="artist-card">Arctic Monkeys</div>
+          <div class="artist-card">The Killers</div>
+          <div class="artist-card">Titãs</div>
+          <div class="artist-card">Legião Urbana Tribute</div>
+          <div class="artist-card">CPM 22</div>
+        </div>
+      </section>
 
-    <section id="cervejas">
-      <h2>Cervejas Artesanais</h2>
-      <p>Mais de 100 rótulos de cervejarias independentes.</p>
-    </section>
+      <section id="cervejas" class="section dark">
+        <h2>Cervejas Artesanais</h2>
+        <p>Deguste os melhores rótulos de cervejarias independentes.</p>
+        <div class="cerveja-list">
+          <div class="beer-card">Hop Thunder IPA</div>
+          <div class="beer-card">Blonde Bicho Solto</div>
+          <div class="beer-card">Lager da Montanha</div>
+          <div class="beer-card">Porter Rock & Foam</div>
+        </div>
+      </section>
 
-    <section id="ingressos">
-      <h2>Garanta seu Ingresso</h2>
-      <p>Não fique de fora do festival mais saboroso do ano.</p>
-    </section>
+      <section id="ingressos" class="section">
+        <h2>Ingressos</h2>
+        <p>Garanta sua entrada antes que esgote!</p>
+        <div class="tickets">
+          <div class="ticket-card">
+            <h3>Pista</h3>
+            <p>R$ 250</p>
+            <a href="#" class="btn">Comprar</a>
+          </div>
+          <div class="ticket-card">
+            <h3>VIP</h3>
+            <p>R$ 600</p>
+            <a href="#" class="btn">Comprar</a>
+          </div>
+          <div class="ticket-card">
+            <h3>Backstage</h3>
+            <p>R$ 1200</p>
+            <a href="#" class="btn">Comprar</a>
+          </div>
+        </div>
+      </section>
 
-    <section id="contato">
-      <h2>Fale Conosco</h2>
-      <p>Dúvidas? Mande uma mensagem!</p>
-    </section>
-  </main>
+      <section id="contato" class="section dark">
+        <h2>Contato</h2>
+        <p>Tem alguma dúvida? Entre em contato conosco!</p>
+        <form class="contact-form">
+          <input type="text" placeholder="Seu nome" required />
+          <input type="email" placeholder="Seu e-mail" required />
+          <textarea placeholder="Sua mensagem" required></textarea>
+          <button type="submit" class="btn">Enviar</button>
+        </form>
+      </section>
+    </main>
 
-  <footer>
-    <p>&copy; 2025 Lollapalúpulo. Todos os direitos reservados.</p>
-  </footer>
+    <footer class="footer">
+      <p>&copy; 2025 Lollapalúpulo Festival. Todos os direitos reservados.</p>
+    </footer>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
